@@ -14,8 +14,13 @@ public class Home{
 
 		// Create an object of type Garage 
                 //HERE
-
-
+Garage g=new Garage();
+g.addCar("Toyota Corolla Cross");
+g.ListCars();
+g.addCar("Ford Fusion");
+g.ListCars();
+g.moveOut("Ford Fusion");
+g.ListCars();
 	        // Add "Toyota Corolla Cross" in the garage. Hint: use method addCar () of class Garage
                 //HERE
 
