@@ -21,7 +21,12 @@ public class Garage{
      * private classType [] varName = new classType[size];
      *
      */
-
+    public static int countCars=0;
+private Car[]allcar;
+public Garage(){
+allcar=new Car[3];
+}
+ 
     /************ Part 2 **************/
     /**
      * Decalre a static/class variable named countCars
@@ -31,6 +36,7 @@ public class Garage{
      * public dataType varName= value;
      *
      */
+    
 
     /************ Part 3 **************/
     /**
@@ -45,7 +51,30 @@ public class Garage{
      *     }
      *}
      */
-
+    /**precondition model of car to add to garage
+     * postcondition new car is added to array
+     * 
+     */
+public void addCar(String model){
+    boolean found=false;
+for(int i=0;i<countCars;i++){
+    if(allcar[i].getModel().equals(model)){
+        found=true;
+        allcar[i].moveCarIn();
+    }
+}
+if(!found){
+    if(countCars<allcar.length){
+    Car v=new Car();
+    v.setModel(model);
+    allcar[countCars]=v;
+    allcar[countCars].moveCarIn();
+    countCars++;}
+    else{
+        System.out.println("garage full");
+    }
+}
+}
     /************ Part 4 **************/
     /**
      * Define addCar(String parameter) that adds a new car (by model) to the garage 
@@ -71,7 +100,19 @@ public class Garage{
      * public void methodName(String m)
      *
      */
+     /**precondition model of car to add to garage
+     * postcondition new car is movedout 
+     * 
+     */
+public void moveOut(String model){
+    for(int i=0;i<countCars;i++){
+        if(allcar[i].getModel().equals(model)){
+            allcar[i].moveCarOut();
+        }
+    }
 
+
+}
 
 
     /************ Part 6 **************/
@@ -84,6 +125,19 @@ public class Garage{
      * public void methodName(String m)
      *
      */
+     /**precondition model of car to add to garage
+     * postcondition new car is movedin
+     * 
+     */
+   public void moveIN(String model){
+    for(int i=0;i<countCars;i++){
+        if(allcar[i].getModel().equals(model)){
+            allcar[i].moveCarIn();
+        }
+    }
+
+
+}
 
 
     /************ Part 7 **************/
@@ -95,7 +149,19 @@ public class Garage{
      * public void methodName(String m)
      *
      */
+     /**precondition
+     * postcondition print all cars in garage
+     * 
+     */
 
+ public void ListCars(){
+    System.out.println("all cars in the garagear: ");
+    for(int i=0;i<countCars;i++){
+        if(allcar[i].getFlag())
+        System.out.println("car "+(i+1)+": "+allcar[i].getModel());
+    }
 
+ System.out.println();
+}
 
 }

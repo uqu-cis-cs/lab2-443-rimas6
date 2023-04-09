@@ -21,6 +21,32 @@ public class Car{
      * private dataType name;
      *
      */
+    private String model;
+    private boolean flag;
+
+    public Car(){
+        flag=false;
+        model="";
+    }
+    public void moveCarOut(){
+        flag=false;
+    }
+    public void moveCarIn(){
+        flag=true;
+    }
+    public String getModel(){
+        return model;
+    }
+   public void setModel(String n) {
+    model=n;
+   }
+   public boolean getFlag(){
+    return flag;
+   }
+   public void setFlag(boolean m){
+    this.flag=m;
+   }
+   
 
     /************ Part 2 **************/
     /**
